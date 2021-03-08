@@ -7,8 +7,6 @@ import 'package:flutter_foreign/service/GraphqlService.dart';
 import 'package:flutter_foreign/graphql/QueryMutation.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:translator/translator.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import "package:http/http.dart" as http;
@@ -146,7 +144,7 @@ class _State extends State<DisplayPictureScreen> {
                         "Eng : " + translation,
                         style: TextStyle(fontSize: 16),
                       )),
-                  FlatButton(
+                  TextButton(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -154,7 +152,7 @@ class _State extends State<DisplayPictureScreen> {
                     ),
                     onPressed: () => _speak(),
                   ),
-                  FlatButton(
+                  TextButton(
                     child: Text("Add Shop"),
                     onPressed: () async {
                       await getAddress();
@@ -168,7 +166,7 @@ class _State extends State<DisplayPictureScreen> {
                     children: <Widget>[
                       Image.file(File(imagePath)),
                       loading != true
-                          ? FlatButton(
+                          ? TextButton(
                               child: Text("tranlate"),
                               onPressed: () {
                                 setState(() {

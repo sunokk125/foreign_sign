@@ -104,7 +104,7 @@ class _State extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularProgressIndicator(),
-                FlatButton(
+                TextButton(
                   child: Text("setcamera"),
                   onPressed: () {
                     setState(() {});

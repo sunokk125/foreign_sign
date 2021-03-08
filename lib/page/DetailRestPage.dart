@@ -165,7 +165,7 @@ class _State extends State<DetailRestPage> {
               ),
             ),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                   onPressed: () async {
                     if (contentsController.text.isNotEmpty) {
                       await createComm(contentsController.text, rating)
@@ -208,7 +208,7 @@ class _State extends State<DetailRestPage> {
                     }
                   },
                   child: Text("Save")),
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     titleController.clear();
                     contentsController.clear();
