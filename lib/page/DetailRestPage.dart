@@ -253,19 +253,34 @@ class _State extends State<DetailRestPage> {
                 var writer = responseData['user_name'];
                 var comment = responseData['com_content'];
                 var score = responseData['com_score'];
-                return ListTile(
-                  title: Text("$comment"),
-                  subtitle: Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                        size: 16,
-                      ),
-                      Text("$score  |  $writer")
-                    ],
-                  ),
-                );
+
+                return _userIdx == writer
+                    ? ListTile(
+                        title: Text("$comment"),
+                        subtitle: Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 16,
+                            ),
+                            Text("$score  |  $writer")
+                          ],
+                        ),
+                      )
+                    : ListTile(
+                        title: Text("$comment"),
+                        subtitle: Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 16,
+                            ),
+                            Text("$score  |  $writer")
+                          ],
+                        ),
+                      );
               });
         });
   }

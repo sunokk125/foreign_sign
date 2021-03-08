@@ -26,7 +26,6 @@ class _State extends State<DisplayPictureScreen> {
   String translation;
   File file;
   final String nodeEndPoint = 'http://10.1.78.245:3000/image';
-
   bool loading = false;
 
   void dispose() {
@@ -120,10 +119,10 @@ class _State extends State<DisplayPictureScreen> {
     file = File(imagePath);
 
     Future _speak() async {
-      await _flutterTts.setLanguage("en_US");
+      await _flutterTts.setLanguage("ko_KR");
       await _flutterTts.setPitch(1);
-      await _flutterTts.setVoice({"name": "Karen", "locale": "en-US"});
-      await _flutterTts.speak(translation);
+      await _flutterTts.setVoice({"name": "Karen", "locale": "ko_KR"});
+      await _flutterTts.speak(description);
     }
 
     return Scaffold(
